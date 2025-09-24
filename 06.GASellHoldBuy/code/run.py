@@ -69,7 +69,8 @@ def predict(X, W):
     return X
     
 # Create a train environmant
-env = SellHoldBuyEnv(observation_size=OBS_SIZE, features=train[['close_percentage','volatility']].values, closes=train['close'].values)
+env = SellHoldBuyEnv(observation_size=OBS_SIZE, features=train[['close_percentage','volatility']].values,
+                     closes=train['close'].values)
 observation_space_size = env.observation_space.shape[0] * FEATURES
 action_space_size = env.action_space.n
 
